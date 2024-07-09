@@ -19,8 +19,6 @@ def start_server():
             chunk = client_connection.recv(1024)
             request_data += chunk
             if len(chunk) < 1024:
-                # Isso assume que um chunk menor que 1024 significa o fim dos dados.
-                # Cuidado: isso pode não ser verdade em todos os casos, dependendo do cliente e da rede.
                 break
         request = request_data
         if request:
